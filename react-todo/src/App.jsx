@@ -23,12 +23,12 @@ function App() {
     },
 ]); // []의 첫 번째는 data, 두 번째는 setter 함수를 자동적으로 배정(구조분해 할당 )
 
-const onInsert = () => {
+const onInsert = (text) => {
   setTodos(
     todos.concat(
       {
         id: 4,
-        text: "입력 테스트",
+        text: text,
         checked: false,
       }
     )
