@@ -1,10 +1,16 @@
-function TodoList() {
+import ToDOListItem from "./TodoListItem";
+
+// App.jsx로 todos를 옮겨서, TodoList에서 받아와서 사용
+function TodoList({ todos }) {
     return ( 
         <>
             <ul>
-                <li>아이템 1</li>
-                <li>아이템 2</li>
-                <li>아이템 3</li>
+                {/* 반복문으로 출력하기 */}
+                {/* { todos.map((item) => (<li>{item.text}</li>)) } 중괄호 잘 써주기! */}
+                {todos.map( (todo) => (  /* 반복적인 요소들은 key 값이 필요함 */
+                    <ToDOListItem key={todo.id} todo={todo}/>
+                ))}
+                
             </ul>
         </>
      );
